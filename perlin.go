@@ -108,6 +108,7 @@ func noise(x_unit float32, y_unit float32, z_unit float32, p []int) float32 {
 	return noise
 }
 
+// Based on: Perlin, K. (2002, July). Improving noise.
 func fade(input float32) float32 {
 	term := float32(math.Pow(float64(input), float64(3)))
 	effector := float32(input*(input*6-15) + 10)
@@ -119,6 +120,7 @@ func LERP(t float32, a float32, b float32) float32 {
 	return a + t*(b-a)
 }
 
+// Based on: Perlin, K. (2002, July). Improving noise.
 func gradient(hash int, x float32, y float32, z float32) float32 {
 	h := hash & 15
 	u := x
